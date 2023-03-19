@@ -17,6 +17,7 @@ for (let i = 0 ; i < document.querySelectorAll("button.drum").length; i++) {
 
 document.addEventListener("keypress",function (event) {
     playSound(event.key)
+    buttonAnimation(event.key);
 })
 
 function playSound(whichDrumToPlay) {
@@ -53,4 +54,9 @@ function playSound(whichDrumToPlay) {
         default :
             console.log(whichDrumToPlay)
     }
+}
+
+function buttonAnimation(key) {
+    document.querySelector("." + key).classList.toggle("pressed");
+    setTimeout(function () {    document.querySelector("." + key).classList.toggle("pressed");}, 500)
 }
