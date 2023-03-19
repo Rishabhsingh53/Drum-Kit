@@ -8,8 +8,10 @@ function () {
 } 
 */
 
-for (let i = 0 ; i < document.querySelectorAll("button").length;i++) {
+for (let i = 0 ; i < document.querySelectorAll("button.drum").length; i++) {
     document.querySelectorAll("button")[i].addEventListener("click",function () {
-        alert("I got clicked!!");
+        this.style.color = "white";
     })
+    // for playing sound 
+    var audio = new Audio("sounds/w.mp3");
 }
