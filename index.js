@@ -12,6 +12,7 @@ for (let i = 0 ; i < document.querySelectorAll("button.drum").length; i++) {
     document.querySelectorAll("button")[i].addEventListener("click",function () {
         var whichDrumToPlay = this.textContent;
         playSound(whichDrumToPlay)
+        buttonAnimation(whichDrumToPlay);
     })
 }
 
@@ -58,5 +59,5 @@ function playSound(whichDrumToPlay) {
 
 function buttonAnimation(key) {
     document.querySelector("." + key).classList.toggle("pressed");
-    setTimeout(function () {    document.querySelector("." + key).classList.toggle("pressed");}, 500)
+    setTimeout(function () {    document.querySelector("." + key).classList.toggle("pressed");}, 100)
 }
